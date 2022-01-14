@@ -894,6 +894,7 @@ describe('5 - Crie o endpoint PUT /talker/:id', () => {
       .then((responseLogin) => {
         const { body } = responseLogin;
         const result = JSON.parse(body);
+        console.log(result.token)
         return frisby
           .setup({
             request: {

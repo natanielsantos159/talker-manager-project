@@ -1,4 +1,4 @@
-const existsAndNotEmpty = (key, obj) => (key in obj) && obj[key];
+const existsAndNotEmpty = (key, obj) => (key in obj) && obj[key] !== '';
 
 module.exports = (req, res, next) => {
   const { talk } = req.body;
