@@ -18,6 +18,8 @@ const validateRate = require('./middlewares/validateRate');
 const validateTalk = require('./middlewares/validateTalk');
 const createTalker = require('./middlewares/createTalker');
 const editTalker = require('./middlewares/editTalker');
+const deleteTalker = require('./middlewares/deleteTalker');
+
 // não remova esse endpoint, e para o avaliador funcionar
 app.get('/', (_request, response) => {
   response.status(HTTP_OK_STATUS).send();
@@ -32,6 +34,8 @@ app.get('/talker', getTalkers);
 app.get('/talker/:id', getTalkerById);
 
 app.post('/login', validateLogin);
+
+app.delete('/talker/:id', validateToken, deleteTalker);
 
 app.use(
   validateToken, 
